@@ -1,0 +1,26 @@
+# nThread 1 nGpus 1 minBytes 262144 maxBytes 536870912 step: 2(factor) warmup iters: 5 iters: 30 validation: 0 
+#
+# Using devices
+#   Rank  0 Pid   6257 on ip-172-31-46-58 device  0 [0x00] Tesla V100-SXM2-32GB
+#   Rank  1 Pid   6093 on ip-172-31-37-122 device  0 [0x00] Tesla V100-SXM2-32GB
+#   Rank  2 Pid   5480 on ip-172-31-46-131 device  0 [0x00] Tesla V100-SXM2-32GB
+#   Rank  3 Pid   5521 on ip-172-31-41-29 device  0 [0x00] Tesla V100-SXM2-32GB
+#
+#                                                     out-of-place                       in-place          
+#       size         count    type   redop     time   algbw   busbw  error     time   algbw   busbw  error
+#        (B)    (elements)                     (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+      262144         65536   float     sum   1276.1    0.21    0.31    N/A   1235.2    0.21    0.32    N/A
+      524288        131072   float     sum    283.1    1.85    2.78    N/A    271.8    1.93    2.89    N/A
+     1048576        262144   float     sum    305.9    3.43    5.14    N/A    311.7    3.36    5.05    N/A
+     2097152        524288   float     sum    426.6    4.92    7.37    N/A    438.4    4.78    7.18    N/A
+     4194304       1048576   float     sum    796.7    5.26    7.90    N/A    802.1    5.23    7.84    N/A
+     8388608       2097152   float     sum   1534.2    5.47    8.20    N/A   1532.0    5.48    8.21    N/A
+    16777216       4194304   float     sum   2995.7    5.60    8.40    N/A   2992.7    5.61    8.41    N/A
+    33554432       8388608   float     sum   5959.7    5.63    8.45    N/A   5977.0    5.61    8.42    N/A
+    67108864      16777216   float     sum    11930    5.63    8.44    N/A    11924    5.63    8.44    N/A
+   134217728      33554432   float     sum    23828    5.63    8.45    N/A    23775    5.65    8.47    N/A
+   268435456      67108864   float     sum    47607    5.64    8.46    N/A    47613    5.64    8.46    N/A
+   536870912     134217728   float     sum    95182    5.64    8.46    N/A    95185    5.64    8.46    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 6.85423 
+#
