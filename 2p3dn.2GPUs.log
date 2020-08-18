@@ -1,0 +1,29 @@
+# nThread 1 nGpus 1 minBytes 8192 maxBytes 536870912 step: 2(factor) warmup iters: 5 iters: 30 validation: 0 
+#
+# Using devices
+#   Rank  0 Pid   4979 on ip-172-31-46-58 device  0 [0x00] Tesla V100-SXM2-32GB
+#   Rank  1 Pid   4527 on ip-172-31-37-122 device  0 [0x00] Tesla V100-SXM2-32GB
+#
+#                                                     out-of-place                       in-place          
+#       size         count    type   redop     time   algbw   busbw  error     time   algbw   busbw  error
+#        (B)    (elements)                     (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+        8192          2048   float     sum    163.3    0.05    0.05    N/A    135.0    0.06    0.06    N/A
+       16384          4096   float     sum    175.6    0.09    0.09    N/A    163.6    0.10    0.10    N/A
+       32768          8192   float     sum    189.2    0.17    0.17    N/A    186.7    0.18    0.18    N/A
+       65536         16384   float     sum    231.3    0.28    0.28    N/A    235.7    0.28    0.28    N/A
+      131072         32768   float     sum    440.9    0.30    0.30    N/A    460.4    0.28    0.28    N/A
+      262144         65536   float     sum    363.9    0.72    0.72    N/A    350.8    0.75    0.75    N/A
+      524288        131072   float     sum    438.1    1.20    1.20    N/A    421.6    1.24    1.24    N/A
+     1048576        262144   float     sum    592.0    1.77    1.77    N/A    606.2    1.73    1.73    N/A
+     2097152        524288   float     sum    904.1    2.32    2.32    N/A    900.9    2.33    2.33    N/A
+     4194304       1048576   float     sum   1510.1    2.78    2.78    N/A   1535.2    2.73    2.73    N/A
+     8388608       2097152   float     sum   1984.5    4.23    4.23    N/A   1994.4    4.21    4.21    N/A
+    16777216       4194304   float     sum   3850.1    4.36    4.36    N/A   3892.7    4.31    4.31    N/A
+    33554432       8388608   float     sum   7541.6    4.45    4.45    N/A   7597.8    4.42    4.42    N/A
+    67108864      16777216   float     sum    15096    4.45    4.45    N/A    15081    4.45    4.45    N/A
+   134217728      33554432   float     sum    30070    4.46    4.46    N/A    29620    4.53    4.53    N/A
+   268435456      67108864   float     sum    60174    4.46    4.46    N/A    58253    4.61    4.61    N/A
+   536870912     134217728   float     sum   117092    4.59    4.59    N/A   116058    4.63    4.63    N/A
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 2.39703 
+#
